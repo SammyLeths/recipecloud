@@ -1,0 +1,96 @@
+$color-primary: #8b2418;
+$color-grad-1: #4392f1;
+$color-grad-2: #dc493a;
+
+$color-grey-light-1: #f9f5f3; // Light background
+$color-grey-light-2: #f2efee; // Light lines
+$color-grey-light-3: #d3c7c3; // Light text (placeholder)
+$color-grey-dark-1: #615551; // Normal text
+$color-grey-dark-2: #918581; // Lighter text
+
+$gradient: linear-gradient(to right bottom, $color-grad-1, $color-grad-2);
+
+$bp-x-large: 87.5em; // 1400px
+$bp-large: 75em; // 1200px
+$bp-medium: 72.25em; // 1156px
+$bp-small: 55.75em; // 892px
+$bp-small-xs: 46.875em; // 750px
+$bp-smallest: 36em; // 576px
+$bp-xx-small: 28.125em; // 450px
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: $color-grey-dark-1;
+  background-image: $gradient;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  padding: 7rem;
+
+  @media only screen and (max-width: $bp-smallest) {
+    padding: 3rem;
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 2rem 6rem 0.5rem rgba($color-grey-dark-1, 0.2);
+
+  display: grid;
+  grid-template-rows: 10rem minmax(100rem, auto);
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    'head head'
+    'list recipe';
+
+  @media only screen and (max-width: $bp-large) {
+    max-width: 100%;
+    margin: auto;
+    border-radius: 0;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-rows: 15rem 40rem auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'head'
+      'list'
+      'recipe';
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    grid-template-rows: 23rem 40rem auto;
+  }
+
+  @media only screen and (max-width: $bp-small-xs) {
+    grid-template-rows: 23rem 40rem auto;
+  }
+}
