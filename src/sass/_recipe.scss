@@ -63,6 +63,12 @@
     @media only screen and (max-width: $bp-medium) {
       width: 70%;
     }
+
+    @media only screen and (max-width: $bp-smallest) {
+      width: 85%;
+      transform: translate(-50%, 40%) skewY(-6deg);
+      font-size: 2.25rem;
+    }
   }
 
   ///////////
